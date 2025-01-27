@@ -25,15 +25,14 @@ jobs:
         with:
           images: |
             tuftsttsrt/qiime2-amplicon
-          tags: |
-            type=raw,value=tuftsttsrt/qiime2-amplicon:${{ github.ref }}
+            
       - name: Build & Publish Docker Image
         uses: docker/build-push-action@v5
         with:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ steps.metadata.outputs.tags }}
+          tags: 2024.10
           labels: ${{ steps.metadata.outputs.labels }}
           build-args: |
             GPAT=${{ secrets.GPAT }}
