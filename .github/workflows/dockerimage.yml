@@ -26,9 +26,7 @@ jobs:
           images: |
             tuftsttsrt/qiime2-amplicon
           tags: |
-            type=semver,pattern={{version}}
-            type=raw,value={{ github.ref_name }}
-            type=raw,value={{ github.ref_name_major }}.{{ github.ref_name_minor}}
+            type=raw,value={{ ref_name }}
       - name: Build & Publish Docker Image
         uses: docker/build-push-action@v5
         with:
