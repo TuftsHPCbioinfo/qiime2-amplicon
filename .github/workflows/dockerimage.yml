@@ -27,7 +27,7 @@ jobs:
             tuftsttsrt/qiime2-amplicon
           tags: |
             type=raw,value={{ ref_name }}
-            type=raw,value={{ ref_name | trim_prefix: "v" }}
+            type=raw,value={{ ref_name | trim_prefix: 'v' }}
             type=raw,value=latest
       - name: Build & Publish Docker Image
         uses: docker/build-push-action@v5
