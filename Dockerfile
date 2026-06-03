@@ -1,4 +1,4 @@
-FROM quay.io/qiime2/amplicon:2024.10
+FROM quay.io/qiime2/amplicon:2024.2
 
 USER root
 
