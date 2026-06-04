@@ -1,4 +1,4 @@
-FROM quay.io/qiime2/amplicon:2024.2
+FROM quay.io/qiime2/amplicon:2024.10
 
 USER root
 
@@ -13,7 +13,8 @@ RUN pip install --no-cache-dir \
     ipython \
     ipykernel \
     matplotlib
-
-RUN pip install --no-cache-dir gemelli
+RUN pip install Cython==0.29.37 && \
+pip install iow==1.0.7 && \
+pip --no-cache-dir install gemelli==0.0.12
 
 RUN qiime dev refresh-cache && qiime gemelli --help
